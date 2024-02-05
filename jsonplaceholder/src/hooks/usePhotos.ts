@@ -12,8 +12,8 @@ interface PhotoQuery {
   pageSize: number
 }
 
-const usePhotos = (query: PhotoQuery) => {
-  return useInfiniteQuery<Photo[], Error>({
+const usePhotos = (query: PhotoQuery) =>
+  useInfiniteQuery<Photo[], Error>({
     queryKey: ['photos', query],
     queryFn: ({ pageParam = 1 }) =>
       axios
@@ -29,6 +29,5 @@ const usePhotos = (query: PhotoQuery) => {
       return lastPage.length > 0 ? allPage.length + 1 : undefined
     },
   })
-}
 
 export default usePhotos
