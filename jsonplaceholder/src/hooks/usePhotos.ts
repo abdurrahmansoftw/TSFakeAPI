@@ -25,6 +25,9 @@ const usePhotos = (query: PhotoQuery) =>
         })
         .then((response) => response.data),
     staleTime: 10 * 1000,
+    getNextPageParam: (lastPage, allPage) => {
+      return lastPage.length > 0 ? allPage.length + 1 : undefined
+    },
   })
 
 export default usePhotos
