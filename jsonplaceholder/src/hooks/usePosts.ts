@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 interface Post {
   id: number
@@ -8,17 +8,19 @@ interface Post {
   body: string
 }
 
-const usePosts = () => {
+const usePosts = (userId: number | undefined) => {
   const fetchPosts = () =>
     axios
-      .get<Post[]>('https://jsonplaceholder.typicode.com/posts')
+      .get<Post[]>('https://jsonplaceholder.typicode.com/posts', {
+        params: { userId },
+      })
       .then((response) => response.data)
 
-     return  useQuery<Post[], Error>({
-        queryKey: ['posts'],
-        queryFn: fetchPosts,
-        staleTime: 10 * 1000,
-      })
+  return useQuery<Post[], Error>({
+    queryKey: ['users', userId, 'posts'],
+    queryFn: fetchPosts,
+    staleTime: 10 * 1000,
+  })
 }
 
 export default usePosts
