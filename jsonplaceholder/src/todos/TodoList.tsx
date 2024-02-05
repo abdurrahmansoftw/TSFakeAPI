@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 interface Todo {
   id: number
@@ -9,7 +10,22 @@ interface Todo {
 
 const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([])
-  return <div>TodoList</div>
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/todos')
+      .then((response) => setTodos(response.data))
+      .catch((error) => setError(error))
+  }, [])
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
+    </ul>
+  )
 }
 
 export default TodoList
