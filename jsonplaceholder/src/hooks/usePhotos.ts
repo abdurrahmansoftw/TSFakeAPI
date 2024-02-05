@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 
-interface Todo {
+interface Photo {
   id: number
   title: string
   albumId: number
@@ -12,10 +12,10 @@ interface Todo {
 const usePhotos = () => {
   const fetchPhotos = () =>
     axios
-      .get<Todo[]>('https://jsonplaceholder.typicode.com/photos')
+      .get<Photo[]>('https://jsonplaceholder.typicode.com/photos')
       .then((response) => response.data)
 
-     return  useQuery<Todo[], Error>({
+     return  useQuery<Photo[], Error>({
         queryKey: ['photos'],
         queryFn: fetchPhotos,
         staleTime: 10 * 1000,
