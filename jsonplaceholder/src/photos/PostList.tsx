@@ -11,7 +11,7 @@ const PostList = () => {
     <div>
       <List>
         {posts?.map((post) => (
-          <ListItem key={post.id}>
+          <ListItem key={post.id} sx={{ borderBottom: 1 }}>
             <ListItemText>{post.title}</ListItemText>
           </ListItem>
         ))}
