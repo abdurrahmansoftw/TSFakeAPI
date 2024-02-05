@@ -4,7 +4,7 @@ import {
   CardContent,
   CardMedia,
   CircularProgress,
-  List,
+  Grid,
   Typography,
 } from '@mui/material'
 import usePhotos from '../hooks/usePhotos'
@@ -16,22 +16,24 @@ const PhotoList = () => {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <List>
+      <Grid container spacing={2}>
         {photos?.map((photo) => (
-          <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-              sx={{ height: 140 }}
-              image={photo.url}
-              title={photo.title}
-            />
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                {photo.title}
-              </Typography>
-            </CardContent>
-          </Card>
+          <Grid item xs={4} key={photo.id}>
+            <Card>
+              <CardMedia
+                sx={{ height: 140 }}
+                image={photo.url}
+                title={photo.title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant='h6' component='div'>
+                  {photo.title}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         ))}
-      </List>
+      </Grid>
     </Box>
   )
 }
