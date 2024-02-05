@@ -1,3 +1,4 @@
+import { List, ListItem, ListItemText } from '@mui/material'
 import usePosts from '../hooks/usePosts'
 
 const PostList = () => {
@@ -8,11 +9,13 @@ const PostList = () => {
 
   return (
     <div>
-      <ul>
+      <List>
         {posts?.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <ListItem key={post.id}>
+            <ListItemText>{post.title}</ListItemText>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </div>
   )
 }
