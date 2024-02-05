@@ -1,14 +1,14 @@
 import { Container } from '@mui/material'
 import React from 'react'
-import UserList from './users/UserList'
+import PhotoList from './photos/PhotoList'
 
 const App = () => {
   return (
     <React.Fragment>
       <Container>
         <h1 className='text-3xl font-bold  my-4'>TodoList: React Queary!</h1>
-        <UserList />
-        {/* <PhotoList /> */}
+        {/* <UserList /> */}
+        <PhotoList />
         {/* <PostList /> */}
       </Container>
     </React.Fragment>

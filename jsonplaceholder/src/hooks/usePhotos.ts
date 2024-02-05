@@ -1,5 +1,4 @@
-import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
+import { useInfiniteQuery } from '@tanstack/react-query'
 
 interface Photo {
   id: number
@@ -9,18 +8,27 @@ interface Photo {
   thumbnailUrl: string
 }
 
-const usePhotos = () => {
-  const fetchPhotos = () =>
-    axios
-      .get<Photo[]>('https://jsonplaceholder.typicode.com/photos')
-      .then((response) => response.data)
+interface PhotoQuery {
+  pageSize: number
+}
 
-     return  useQuery<Photo[], Error>({
-        queryKey: ['photos'],
-        queryFn: fetchPhotos,
-        staleTime: 10 * 1000,
-
-      })
+const usePhotos = (query: PhotoQuery) => {
+  return useInfiniteQuery<Photo[], Error>({
+    queryKey: ['photos', query],
+    queryFn: ({ pageParam = 1 }) =>
+      axios
+        .get('https://jsonplaceholder.typicode.com/photos', {
+          params: {
+            _start: (pageParam - 1) * query.pageSize,
+            _limit: query.pageSize,
+          },
+        })
+        .then((response) => response.data),
+    staleTime: 10 * 1000,
+    getNextPageParam: (lastPage, allPage) => {
+      return lastPage.length > 0 ? allPage.length + 1 : undefined
+    },
+  })
 }
 
 export default usePhotos

@@ -11,6 +11,7 @@ import usePhotos from '../hooks/usePhotos'
 
 const PhotoList = () => {
   const { data: photos, error, isLoading } = usePhotos()
+
   if (error) return <p>{error.message}</p>
   if (isLoading) return <CircularProgress />
 
