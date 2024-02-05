@@ -1,6 +1,6 @@
 import { Box, Divider, List, ListItem, ListItemText } from '@mui/material'
+import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
 
 interface Todo {
   id: number
@@ -10,23 +10,24 @@ interface Todo {
 }
 
 const TodoList = () => {
-  const [todos, setTodos] = useState<Todo[]>([])
-  const [error, setError] = useState('')
-
-  useEffect(() => {
+  const fetchTodos = () =>
     axios
-      .get('https://jsonplaceholder.typicode.com/todos')
-      .then((response) => setTodos(response.data))
-      .catch((error) => setError(error))
-  }, [])
+      .get<Todo[]>('https://jsonplaceholder.typicode.com/todos')
+      .then((response) => response.data)
+
+  const { data: todos, error } = useQuery({
+    queryKey: ['todos'],
+    queryFn: fetchTodos,
+  })
+
+  if (error) return 'Error'
 
   return (
     <Box sx={{ width: '100%' }}>
-      {error && 'Error'}
       <List>
-        {todos.map((todo) => (
+        {todos?.map((todo) => (
           <ListItem key={todo.id}>
-            <ListItemText primary={`todo ${todo.title}`} />
+            <ListItemText primary={`${todo.id}. ${todo.title}`} />
             <Divider />
           </ListItem>
         ))}
