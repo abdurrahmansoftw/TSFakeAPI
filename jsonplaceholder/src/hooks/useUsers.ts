@@ -1,12 +1,34 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
+interface GeoLocation {
+  lat: string
+  lng: string
+}
+
+interface Address {
+  street: string
+  suite: string
+  city: string
+  zipcode: string
+  geo: GeoLocation
+}
+
+interface Company {
+  name: string
+  catchPhrase: string
+  bs: string
+}
+
 interface User {
   id: number
-  title: string
-  albumId: number
-  url: string
-  thumbnailUrl: string
+  name: string
+  username: string
+  email: string
+  address: Address
+  phone: string
+  website: string
+  company: Company
 }
 
 const useUsers = () => {
