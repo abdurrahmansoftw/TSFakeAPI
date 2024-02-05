@@ -1,4 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 interface Photo {
   id: number
@@ -25,8 +26,8 @@ const usePhotos = (query: PhotoQuery) =>
         })
         .then((response) => response.data),
     staleTime: 10 * 1000,
-    getNextPageParam: (lastPage, allPage) => {
-      return lastPage.length > 0 ? allPage.length + 1 : undefined
+    getNextPageParam: (lastPage, allPages) => {
+      return lastPage.length > 0 ? allPages.length + 1 : undefined
     },
   })
 

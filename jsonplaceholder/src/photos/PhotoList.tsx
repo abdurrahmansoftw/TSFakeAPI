@@ -10,7 +10,13 @@ import {
 import usePhotos from '../hooks/usePhotos'
 
 const PhotoList = () => {
-  const { data: photos, error, isLoading } = usePhotos()
+  const pageSize = 10
+  const {
+    data: photos,
+    error,
+    isLoading,
+    fetchNextPage,
+  } = usePhotos({ pageSize })
 
   if (error) return <p>{error.message}</p>
   if (isLoading) return <CircularProgress />
