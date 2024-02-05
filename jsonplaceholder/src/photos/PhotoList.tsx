@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardContent,
   CardMedia,
@@ -41,6 +42,9 @@ const PhotoList = () => {
           </Grid>
         ))}
       </Grid>
+      <Button onClick={() => fetchNextPage()} variant='outlined'>
+        Load More
+      </Button>
     </Box>
   )
 }
