@@ -17,7 +17,7 @@ const usePosts = (userId: number | undefined) => {
       .then((response) => response.data)
 
   return useQuery<Post[], Error>({
-    queryKey: ['users', userId, 'posts'],
+    queryKey: userId ? ['users', userId, 'posts'] : ['posts'],
     queryFn: fetchPosts,
     staleTime: 10 * 1000,
   })
