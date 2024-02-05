@@ -1,6 +1,6 @@
 import { Container } from '@mui/material'
 import React from 'react'
-import PostList from './photos/PostList'
+import PostList from './posts/PostList'
 
 const App = () => {
   return (

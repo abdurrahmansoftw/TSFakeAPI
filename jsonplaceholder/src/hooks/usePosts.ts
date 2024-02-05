@@ -28,7 +28,6 @@ const usePosts = (query: PostQuery) => {
     queryKey: ['posts', query],
     queryFn: fetchPosts,
     staleTime: 10 * 1000,
-    keepPreviousData: true,
   })
 }
 
