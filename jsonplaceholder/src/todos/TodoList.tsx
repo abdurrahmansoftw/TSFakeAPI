@@ -7,7 +7,7 @@ const TodoList = () => {
     <Stack>
       <List>
         {todos?.map((todo) => (
-          <ListItem>{todo.title}</ListItem>
+          <ListItem key={todo.id}>{todo.title}</ListItem>
         ))}
       </List>
     </Stack>
