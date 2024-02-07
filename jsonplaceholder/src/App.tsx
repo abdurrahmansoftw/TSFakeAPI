@@ -1,5 +1,6 @@
 import { Container } from '@mui/material'
 import React from 'react'
+import TodoForm from './todos/TodoForm'
 import TodoList from './todos/TodoList'
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
         {/* <UserList /> */}
         {/* <PhotoList /> */}
         {/* <PostList /> */}
+        <TodoForm />
         <TodoList />
       </Container>
     </React.Fragment>
