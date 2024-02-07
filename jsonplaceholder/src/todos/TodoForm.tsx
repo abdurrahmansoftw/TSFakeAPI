@@ -25,7 +25,9 @@ const TodoForm = () => {
       }}
     >
       <TextField label='add' name='add' size='small' type='text' ref={ref} />
-      <Button variant='outlined'>{addTodo.isPending ? 'Adding' : 'Add'}</Button>
+      <Button variant='outlined' disabled={addTodo.isPending}>
+        {addTodo.isPending ? 'Adding' : 'Add'}
+      </Button>
     </Box>
   )
 }
