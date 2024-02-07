@@ -1,6 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import todoService from '../services/todoService'
-
 import { CACHE_KEY_TODOS } from './constants'
 import { Todo } from './useTodos'
 
@@ -17,7 +16,6 @@ const useAddTodos = (onAdd: () => void) => {
     onMutate: (newTodo: Todo) => {
       const previusTodos =
         queryClient.getQueryData<Todo[]>(CACHE_KEY_TODOS) || []
-
       queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, (todos = []) => [
         newTodo,
         ...todos,
