@@ -2,16 +2,8 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded'
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded'
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded'
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
-import Chip from '@mui/material/Chip'
-import Container from '@mui/material/Container'
-import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import * as React from 'react'
+import { Box, Button, Card, Chip, Container, Grid, Link, Stack, Typography } from '@mui/material'
+import { useState } from 'react'
 
 const items = [
   {
@@ -40,7 +32,7 @@ const items = [
 ]
 
 export default function Features() {
-  const [selectedItemIndex, setSelectedItemIndex] = React.useState(0)
+  const [selectedItemIndex, setSelectedItemIndex] = useState(0)
 
   const handleItemClick = (index: number) => {
     setSelectedItemIndex(index)
