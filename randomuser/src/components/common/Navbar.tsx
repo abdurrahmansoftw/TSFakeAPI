@@ -121,24 +121,10 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
               }}
             >
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <Button
-                color='primary'
-                variant='text'
-                size='small'
-                component='a'
-                href='/material-ui/getting-started/templates/sign-in/'
-                target='_blank'
-              >
+              <Button color='primary' variant='text' size='small' component='a' href='/sign-in/' target='_blank'>
                 Sign in
               </Button>
-              <Button
-                color='primary'
-                variant='contained'
-                size='small'
-                component='a'
-                href='/material-ui/getting-started/templates/sign-up/'
-                target='_blank'
-              >
+              <Button color='primary' variant='contained' size='small' component='a' href='/sign-up/' target='_blank'>
                 Sign up
               </Button>
             </Box>
@@ -161,14 +147,7 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
                     flexGrow: 1,
                   }}
                 >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'end',
-                      flexGrow: 1,
-                    }}
-                  >
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'end', flexGrow: 1 }}>
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
                   <MenuItem onClick={() => scrollToSection('features')}>Features</MenuItem>
@@ -182,7 +161,7 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
                       color='primary'
                       variant='contained'
                       component='a'
-                      href='/material-ui/getting-started/templates/sign-up/'
+                      href='/sign-up'
                       target='_blank'
                       sx={{ width: '100%' }}
                     >
@@ -194,7 +173,7 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
                       color='primary'
                       variant='outlined'
                       component='a'
-                      href='/material-ui/getting-started/templates/sign-in/'
+                      href='/sign-in'
                       target='_blank'
                       sx={{ width: '100%' }}
                     >

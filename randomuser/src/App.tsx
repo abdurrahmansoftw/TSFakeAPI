@@ -9,6 +9,7 @@ import Highlights from './components/Highlights'
 import LogoCollection from './components/LogoCollection'
 import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
+import Footer from './components/common/Footer'
 import Navbar from './components/common/Navbar'
 import getLPTheme from './theme/theme'
 
