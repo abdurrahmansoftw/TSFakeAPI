@@ -61,10 +61,8 @@ export default function Hero() {
               hiddenLabel
               size='small'
               variant='outlined'
+              fullWidth
               placeholder='Your email address'
-              inputProps={{
-                ariaLabel: 'Enter your email address',
-              }}
             />
             <Button variant='contained' color='primary'>
               Start now

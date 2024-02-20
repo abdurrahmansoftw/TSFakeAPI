@@ -70,19 +70,14 @@ export default function Footer() {
             <Typography variant='body2' color='text.secondary' mb={2}>
               Subscribe to our newsletter for weekly updates and promotions.
             </Typography>
-            <Stack direction='row' spacing={1} useFlexGap>
+            <Stack direction='row' spacing={1} useFlexGap component={'form'}>
               <TextField
                 id='outlined-basic'
                 hiddenLabel
                 size='small'
                 variant='outlined'
                 fullWidth
-                aria-label='Enter your email address'
                 placeholder='Your email address'
-                inputProps={{
-                  autocomplete: 'off',
-                  ariaLabel: 'Enter your email address',
-                }}
               />
               <Button variant='contained' color='primary' sx={{ flexShrink: 0 }}>
                 Subscribe

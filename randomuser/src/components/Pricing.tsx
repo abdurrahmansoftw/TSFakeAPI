@@ -134,7 +134,7 @@ export default function Pricing() {
                       sx={{ width: 20, color: tier.title === 'Professional' ? 'primary.light' : 'primary.main' }}
                     />
                     <Typography
-                      component='text'
+                      component='h6'
                       variant='subtitle2'
                       sx={{ color: tier.title === 'Professional' ? 'primary.contrastText' : undefined }}
                     >
