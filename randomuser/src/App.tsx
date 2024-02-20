@@ -8,6 +8,7 @@ import LogoCollection from './components/LogoCollection'
 import Testimonials from './components/Testimonials'
 import Navbar from './components/common/Navbar'
 import getLPTheme from './theme/theme'
+import Highlights from './components/Highlights'
 
 const defaultTheme = createTheme({})
 
