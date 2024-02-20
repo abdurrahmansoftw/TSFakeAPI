@@ -42,7 +42,7 @@ export default function Hero() {
                 color: (theme) => (theme.palette.mode === 'light' ? 'primary.main' : 'primary.light'),
               }}
             >
-              products
+              Products
             </Typography>
           </Typography>
           <Typography variant='body1' textAlign='center' color='text.secondary'>
