@@ -1,17 +1,8 @@
 import MenuIcon from '@mui/icons-material/Menu'
-import {
-  AppBar,
-  Box,
-  Button,
-  Container,
-  Divider,
-  Drawer,
-  MenuItem,
-  PaletteMode,
-  Toolbar,
-  Typography,
-} from '@mui/material'
+import { AppBar, Box, Button, Container, Divider, Drawer, MenuItem, PaletteMode, Toolbar } from '@mui/material'
 import { useState } from 'react'
+import Account from './Account'
+import LinkList from './LinkList'
 import ToggleColorMode from './ToggleColorMode'
 
 const logoStyle = {
@@ -85,48 +76,11 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
                 style={logoStyle}
                 alt='logo of sitemark'
               />
-              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <MenuItem onClick={() => scrollToSection('features')} sx={{ py: '6px', px: '12px' }}>
-                  <Typography variant='body2' color='text.primary'>
-                    Features
-                  </Typography>
-                </MenuItem>
-                <MenuItem onClick={() => scrollToSection('testimonials')} sx={{ py: '6px', px: '12px' }}>
-                  <Typography variant='body2' color='text.primary'>
-                    Testimonials
-                  </Typography>
-                </MenuItem>
-                <MenuItem onClick={() => scrollToSection('highlights')} sx={{ py: '6px', px: '12px' }}>
-                  <Typography variant='body2' color='text.primary'>
-                    Highlights
-                  </Typography>
-                </MenuItem>
-                <MenuItem onClick={() => scrollToSection('pricing')} sx={{ py: '6px', px: '12px' }}>
-                  <Typography variant='body2' color='text.primary'>
-                    Pricing
-                  </Typography>
-                </MenuItem>
-                <MenuItem onClick={() => scrollToSection('faq')} sx={{ py: '6px', px: '12px' }}>
-                  <Typography variant='body2' color='text.primary'>
-                    FAQ
-                  </Typography>
-                </MenuItem>
-              </Box>
+              <LinkList setOpen={setOpen} />
             </Box>
-            <Box
-              sx={{
-                display: { xs: 'none', md: 'flex' },
-                gap: 0.5,
-                alignItems: 'center',
-              }}
-            >
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5, alignItems: 'center' }}>
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <Button color='primary' variant='text' size='small' component='a' href='/sign-in/' target='_blank'>
-                Sign in
-              </Button>
-              <Button color='primary' variant='contained' size='small' component='a' href='/sign-up/' target='_blank'>
-                Sign up
-              </Button>
+              <Account />
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
               <Button
@@ -139,14 +93,7 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
                 <MenuIcon />
               </Button>
               <Drawer anchor='right' open={open} onClose={toggleDrawer(false)}>
-                <Box
-                  sx={{
-                    minWidth: '60dvw',
-                    p: 2,
-                    backgroundColor: 'background.paper',
-                    flexGrow: 1,
-                  }}
-                >
+                <Box sx={{ minWidth: '60dvw', p: 2, backgroundColor: 'background.paper', flexGrow: 1 }}>
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'end', flexGrow: 1 }}>
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
