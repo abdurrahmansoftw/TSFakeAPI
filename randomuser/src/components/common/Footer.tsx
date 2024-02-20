@@ -179,15 +179,7 @@ export default function Footer() {
           </Link>
           <Copyright />
         </div>
-        <Stack
-          direction='row'
-          justifyContent='left'
-          spacing={1}
-          useFlexGap
-          sx={{
-            color: 'text.secondary',
-          }}
-        >
+        <Stack direction='row' justifyContent='left' spacing={1} useFlexGap sx={{ color: 'text.secondary' }}>
           <IconButton color='inherit' href='https://github.com/arswe' aria-label='GitHub' sx={{ alignSelf: 'center' }}>
             <FacebookIcon />
           </IconButton>

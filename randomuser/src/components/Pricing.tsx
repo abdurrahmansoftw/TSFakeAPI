@@ -1,15 +1,6 @@
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import Chip from '@mui/material/Chip'
-import Container from '@mui/material/Container'
-import Divider from '@mui/material/Divider'
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
+import { Box, Button, Card, CardActions, CardContent, Chip, Container, Divider, Grid, Typography } from '@mui/material'
 
 const tiers = [
   {
@@ -138,27 +129,14 @@ export default function Pricing() {
                   }}
                 />
                 {tier.description.map((line) => (
-                  <Box
-                    key={line}
-                    sx={{
-                      py: 1,
-                      display: 'flex',
-                      gap: 1.5,
-                      alignItems: 'center',
-                    }}
-                  >
+                  <Box key={line} sx={{ py: 1, display: 'flex', gap: 1.5, alignItems: 'center' }}>
                     <CheckCircleRoundedIcon
-                      sx={{
-                        width: 20,
-                        color: tier.title === 'Professional' ? 'primary.light' : 'primary.main',
-                      }}
+                      sx={{ width: 20, color: tier.title === 'Professional' ? 'primary.light' : 'primary.main' }}
                     />
                     <Typography
                       component='text'
                       variant='subtitle2'
-                      sx={{
-                        color: tier.title === 'Professional' ? 'primary.contrastText' : undefined,
-                      }}
+                      sx={{ color: tier.title === 'Professional' ? 'primary.contrastText' : undefined }}
                     >
                       {line}
                     </Typography>
