@@ -29,10 +29,7 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
     if (sectionElement) {
       const targetScroll = sectionElement.offsetTop - offset
       sectionElement.scrollIntoView({ behavior: 'smooth' })
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      })
+      window.scrollTo({ top: targetScroll, behavior: 'smooth' })
       setOpen(false)
     }
   }
@@ -60,15 +57,7 @@ const Navbar = ({ mode, toggleColorMode }: AppAppBarProps) => {
                   : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
             })}
           >
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: 'flex',
-                alignItems: 'center',
-                ml: '-18px',
-                px: 0,
-              }}
-            >
+            <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', ml: '-18px', px: 0 }}>
               <img
                 src={
                   'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
