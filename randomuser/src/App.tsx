@@ -3,6 +3,7 @@ import { Box, CssBaseline, PaletteMode, ToggleButton, ToggleButtonGroup } from '
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { useState } from 'react'
 import Hero from './components/Hero'
+import LogoCollection from './components/LogoCollection'
 import Navbar from './components/common/Navbar'
 import getLPTheme from './theme/theme'
 
