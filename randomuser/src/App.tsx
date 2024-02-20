@@ -1,4 +1,5 @@
-import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded'
+import ModeNightRoundedIcon from '@mui/icons-material/ModeNightRounded'
+import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded'
 import { Box, CssBaseline, Divider, PaletteMode, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { useState } from 'react'
@@ -46,10 +47,13 @@ function ToggleCustomTheme({ showCustomTheme, toggleCustomTheme }: ToggleCustomT
         }}
       >
         <ToggleButton value>
-          <AutoAwesomeRoundedIcon sx={{ fontSize: '20px', mr: 1 }} />
-          Custom theme
+          <WbSunnyRoundedIcon sx={{ fontSize: '20px', mr: 1 }} />
+          Dark
         </ToggleButton>
-        <ToggleButton value={false}>Material Design</ToggleButton>
+        <ToggleButton value={false}>
+          <ModeNightRoundedIcon sx={{ fontSize: '20px', mr: 1 }} />
+          Light
+        </ToggleButton>
       </ToggleButtonGroup>
     </Box>
   )

@@ -1,7 +1,7 @@
 import { PaletteMode } from '@mui/material'
 import { red } from '@mui/material/colors'
 import { ThemeOptions, alpha } from '@mui/material/styles'
-import type {} from '@mui/material/themeCssVarsAugmentation'
+import type { } from '@mui/material/themeCssVarsAugmentation'
 
 declare module '@mui/material/styles/createPalette' {
   interface ColorRange {
@@ -149,7 +149,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
     },
   },
   typography: {
-    fontFamily: ['"rajdhani", "sans-serif"'].join(','),
+    fontFamily: ['"Inter", "sans-serif"'].join(','),
     h1: {
       fontSize: 60,
       fontWeight: 600,
