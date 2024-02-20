@@ -65,11 +65,11 @@ export default function Hero() {
               placeholder='Your email address'
             />
             <Button variant='contained' color='primary'>
-              Start now
+              Joint
             </Button>
           </Stack>
           <Typography variant='caption' textAlign='center' sx={{ opacity: 0.8 }}>
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
+            By clicking &quot;Joint&quot; you agree to our&nbsp;
             <Link href='#' color='primary'>
               Terms & Conditions
             </Link>
@@ -83,10 +83,7 @@ export default function Hero() {
             alignSelf: 'center',
             height: { xs: 200, sm: 700 },
             width: '100%',
-            backgroundImage:
-              theme.palette.mode === 'light'
-                ? 'url("/static/images/templates/templates-images/hero-light.png")'
-                : 'url("/static/images/templates/templates-images/hero-dark.png")',
+            backgroundImage: theme.palette.mode === 'light' ? 'url("hero-light.png")' : 'url("hero-dark.png")',
             backgroundSize: 'cover',
             borderRadius: '10px',
             outline: '1px solid',
