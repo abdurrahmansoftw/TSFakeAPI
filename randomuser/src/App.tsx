@@ -1,9 +1,11 @@
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded'
-import { Box, CssBaseline, PaletteMode, ToggleButton, ToggleButtonGroup } from '@mui/material'
+import { Box, CssBaseline, Divider, PaletteMode, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { useState } from 'react'
+import Features from './components/Features'
 import Hero from './components/Hero'
 import LogoCollection from './components/LogoCollection'
+import Testimonials from './components/Testimonials'
 import Navbar from './components/common/Navbar'
 import getLPTheme from './theme/theme'
 
